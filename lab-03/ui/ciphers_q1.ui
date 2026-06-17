@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Classic Ciphers (Question 1)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_title">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>CLASSIC CIPHERS DEMO</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <!-- Vigenere Tab -->
+      <widget class="QWidget" name="tab_vigenere">
+       <attribute name="title">
+        <string>Vigenère</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vLayoutVig">
+        <item>
+         <widget class="QLabel" name="lbl_v_plain">
+          <property name="text">
+           <string>Plain Text:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_v_plain"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_v_key">
+          <property name="text">
+           <string>Key (Text):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_v_key"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_v_cipher">
+          <property name="text">
+           <string>CipherText:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_v_cipher"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutVig">
+          <item>
+           <widget class="QPushButton" name="btn_v_encrypt">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_v_decrypt">
+            <property name="text">
+             <string>Decrypt</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <!-- Rail Fence Tab -->
+      <widget class="QWidget" name="tab_railfence">
+       <attribute name="title">
+        <string>Rail Fence</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vLayoutRF">
+        <item>
+         <widget class="QLabel" name="lbl_rf_plain">
+          <property name="text">
+           <string>Plain Text:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_rf_plain"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_rf_key">
+          <property name="text">
+           <string>Key (Number of rails):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_rf_key"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_rf_cipher">
+          <property name="text">
+           <string>CipherText:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_rf_cipher"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutRF">
+          <item>
+           <widget class="QPushButton" name="btn_rf_encrypt">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_rf_decrypt">
+            <property name="text">
+             <string>Decrypt</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <!-- Playfair Tab -->
+      <widget class="QWidget" name="tab_playfair">
+       <attribute name="title">
+        <string>Playfair</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vLayoutPF">
+        <item>
+         <widget class="QLabel" name="lbl_pf_plain">
+          <property name="text">
+           <string>Plain Text:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_pf_plain"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_pf_key">
+          <property name="text">
+           <string>Key (Text):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_pf_key"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_pf_cipher">
+          <property name="text">
+           <string>CipherText:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_pf_cipher"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutPF">
+          <item>
+           <widget class="QPushButton" name="btn_pf_encrypt">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_pf_decrypt">
+            <property name="text">
+             <string>Decrypt</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <!-- Transposition Tab -->
+      <widget class="QWidget" name="tab_transposition">
+       <attribute name="title">
+        <string>Transposition</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vLayoutTr">
+        <item>
+         <widget class="QLabel" name="lbl_tr_plain">
+          <property name="text">
+           <string>Plain Text:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_tr_plain"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_tr_key">
+          <property name="text">
+           <string>Key (Text / Numeric order, e.g. 3214 or KEYWORD):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_tr_key"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_tr_cipher">
+          <property name="text">
+           <string>CipherText:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txt_tr_cipher"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutTr">
+          <item>
+           <widget class="QPushButton" name="btn_tr_encrypt">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_tr_decrypt">
+            <property name="text">
+             <string>Decrypt</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
