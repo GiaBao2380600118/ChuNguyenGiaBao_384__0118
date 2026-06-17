@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pem
+*.bin
+base64_encoded.txt
+encoded_image.jpg
