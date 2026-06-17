@@ -1,0 +1,7 @@
+PyQt5
+requests
+Flask
+rsa
+pycryptodome
+cryptography
+flask-cors
