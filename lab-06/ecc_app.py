@@ -16,6 +16,7 @@ class ECCApp(QMainWindow):
         self.resize(750, 600)
         self.init_ui()
         self.apply_premium_styling()
+        self.load_keys_from_disk()
 
     def init_ui(self):
         self.central_widget = QWidget()
@@ -150,6 +151,21 @@ class ECCApp(QMainWindow):
             }
         """)
 
+    def load_keys_from_disk(self):
+        keys_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "keys")
+        priv_path = os.path.join(keys_dir, "privateKey.pem")
+        pub_path = os.path.join(keys_dir, "publicKey.pem")
+        if os.path.exists(priv_path) and os.path.exists(pub_path):
+            try:
+                with open(priv_path, "r", encoding="utf-8") as f:
+                    priv_pem = f.read()
+                with open(pub_path, "r", encoding="utf-8") as f:
+                    pub_pem = f.read()
+                self.txt_private_key.setPlainText(priv_pem)
+                self.txt_public_key.setPlainText(pub_pem)
+            except Exception:
+                pass
+
     def handle_generate_keys(self):
         try:
             private_key = ec.generate_private_key(ec.SECP256R1())
@@ -167,9 +183,17 @@ class ECCApp(QMainWindow):
                 format=serialization.PublicFormat.SubjectPublicKeyInfo
             ).decode('utf-8')
             
+            # Save to keys folder
+            keys_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "keys")
+            os.makedirs(keys_dir, exist_ok=True)
+            with open(os.path.join(keys_dir, "privateKey.pem"), "w", encoding="utf-8") as f:
+                f.write(priv_pem)
+            with open(os.path.join(keys_dir, "publicKey.pem"), "w", encoding="utf-8") as f:
+                f.write(pub_pem)
+
             self.txt_private_key.setPlainText(priv_pem)
             self.txt_public_key.setPlainText(pub_pem)
-            QMessageBox.information(self, "Success", "ECC Key Pair generated successfully!")
+            QMessageBox.information(self, "Success", "ECC Key Pair generated successfully and saved to disk!")
         except Exception as e:
             QMessageBox.critical(self, "Key Gen Error", f"Failed to generate keys: {str(e)}")
 
